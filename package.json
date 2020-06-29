@@ -8,18 +8,23 @@
   },
   "homepage": "https://github.com/sketchbuch/vscode-ext-localisation#readme",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sketchbuch/vscode-ext-localisation.git"
   },
+  "types": "dist/index.d.ts",
   "scripts": {
+    "clean": "rimraf ./dist/*",
+    "compile": "tsc --p ./",
+    "prepublish": "yarn clean && yarn compile",
     "test": "jest --config=./config/jest/jest.js"
   },
   "devDependencies": {
     "@types/jest": "^26.0.3",
     "@types/node": "^14.0.14",
     "jest": "^26.1.0",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.5"
   },

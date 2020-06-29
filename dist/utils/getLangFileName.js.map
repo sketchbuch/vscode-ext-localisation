@@ -1,0 +1,1 @@
+{"version":3,"file":"getLangFileName.js","sourceRoot":"","sources":["../../src/utils/getLangFileName.ts"],"names":[],"mappings":";;;AAAA,wBAAkC;AAErB,QAAA,eAAe,GAAG,UAAC,IAAY;IAC1C,IAAI,IAAI,KAAK,gBAAY,EAAE;QACzB,OAAO,kBAAkB,CAAC;KAC3B;IAED,OAAO,iBAAe,IAAI,UAAO,CAAC;AACpC,CAAC,CAAC"}
