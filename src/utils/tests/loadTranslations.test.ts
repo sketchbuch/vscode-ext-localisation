@@ -24,34 +24,34 @@ describe('loadTranslations()', () => {
   };
 
   describe('Default translations:', () => {
-    test('Throws if default translation !exists', () => {
+    test('Throws if default translation file does not exist', () => {
       expect(() => loadTranslations(DEFAULT_LANG, __dirname)).toThrowError(errors.default);
     });
 
-    test('Throws if default translation !file', () => {
+    test('Throws if default translation file is not a file', () => {
       expect(() => loadTranslations(DEFAULT_LANG, MOCK_EXT_PATH2)).toThrowError(
         errors.defaultNotFile
       );
     });
 
-    test('Loads the default translations if they exists', () => {
+    test('Loads the default translations if the file exists', () => {
       loadTranslations(DEFAULT_LANG, MOCK_EXT_PATH);
       expect(translations).toEqual(expectedTranslations);
     });
   });
 
   describe('DE translations:', () => {
-    test('Loads the default translations if the DE file !exists', () => {
+    test('Loads the default translations if the DE file does not exist', () => {
       loadTranslations('de', MOCK_EXT_PATH4);
       expect(translations).toEqual(expectedTranslations);
     });
 
-    test('Loads the default translations if the translation file !file', () => {
+    test('Loads the default translations if the translation file is not a file', () => {
       loadTranslations('de', MOCK_EXT_PATH3);
       expect(translations).toEqual(expectedTranslations);
     });
 
-    test('Loads the DE translations if they exists', () => {
+    test('Loads the DE translations if the file exists', () => {
       loadTranslations('de', MOCK_EXT_PATH);
       expect(translations).toEqual(expectedTranslationsDe);
     });

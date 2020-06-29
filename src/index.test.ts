@@ -15,11 +15,11 @@ describe('t()', () => {
   });
 
   describe('Deep keys', () => {
-    test('Returns deep key if translation does not exist', () => {
+    test('Returns key if deep translation does not exist', () => {
       expect(t('deep.nonexistent-key')).toBe('deep.nonexistent-key');
     });
 
-    test('Returns translation if it exists', () => {
+    test('Returns deep translation if it exists', () => {
       expect(t('test2.test3')).toBe('Some text');
     });
   });
