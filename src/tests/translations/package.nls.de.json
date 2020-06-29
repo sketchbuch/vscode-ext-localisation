@@ -1,0 +1,6 @@
+{
+  "test1": "DE - More text",
+  "test2": {
+    "test3": "DE - Some text"
+  }
+}

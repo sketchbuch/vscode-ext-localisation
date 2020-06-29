@@ -1,0 +1,29 @@
+{
+  "name": "vscode-ext-localisation",
+  "version": "1.0.0",
+  "description": "Localisation for VSCode Extensions using package.nls.json files",
+  "author": "Sketchbuch",
+  "bugs": {
+    "url": "https://github.com/sketchbuch/vscode-ext-localisation/issues"
+  },
+  "homepage": "https://github.com/sketchbuch/vscode-ext-localisation#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sketchbuch/vscode-ext-localisation.git"
+  },
+  "scripts": {
+    "test": "jest --config=./config/jest/jest.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}
