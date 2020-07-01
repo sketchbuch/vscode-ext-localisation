@@ -92,3 +92,9 @@ A list of supported language codes can be found here: https://code.visualstudio.
 See any of my VSCode extensions: https://github.com/sketchbuch?tab=repositories&q=vsc&type=&language
 
 **vsc-packages** has the most comprehensive usage of this package.
+
+## Latest Version
+
+#### [1.0.1](https://github.com/sketchbuch/vscode-ext-localisation/compare/v1.0.0...v1.0.1) (2020-07-01)
+
+- Clean up
