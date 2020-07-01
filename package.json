@@ -6,7 +6,20 @@
   "bugs": {
     "url": "https://github.com/sketchbuch/vscode-ext-localisation/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/sketchbuch/vscode-ext-localisation#readme",
+  "keywords": [
+    "ext",
+    "extension",
+    "localisation",
+    "localization",
+    "nls",
+    "translation",
+    "vsc",
+    "vscode"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "repository": {
