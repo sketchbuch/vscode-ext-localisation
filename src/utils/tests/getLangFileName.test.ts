@@ -1,4 +1,4 @@
-import { DEFAULT_LANG } from '../..';
+import { DEFAULT_LANG } from '../../constants';
 import { getLangFileName } from '../getLangFileName';
 
 describe('getLangFileName()', () => {

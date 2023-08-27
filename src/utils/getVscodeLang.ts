@@ -1,4 +1,4 @@
-import { DEFAULT_LANG } from '..';
+import { DEFAULT_LANG } from '../constants';
 
 export const getVscodeLang = (vscodeLangConfig: string | undefined): string => {
   let lang = DEFAULT_LANG;

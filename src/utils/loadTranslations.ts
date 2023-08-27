@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { DEFAULT_LANG } from '..';
-import { getLangFileName } from './getLangFileName';
+import { DEFAULT_LANG } from '../constants';
 import { Translations } from '../localisation.interface';
+import { getLangFileName } from './getLangFileName';
 
 export let translations: Translations = {};
 

@@ -1,11 +1,14 @@
+export type TranslationType = string | string[];
+export type PlaceholderType = string | number;
+
 export interface Placeholders {
-  [key: string]: string;
+  [key: string]: PlaceholderType;
 }
 
 export interface Translations {
-  [key: string]: string;
+  [key: string]: TranslationType | Translations;
 }
 
-export interface DeepTranslations {
-  [key: string]: string | DeepTranslations;
+export interface TranslationCache {
+  [key: string]: TranslationType;
 }

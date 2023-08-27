@@ -20,7 +20,19 @@ With this extension you can structure your translations **for the rest** of your
     {
         "some-scope": {
             "my-key": "A translation"
+        },
+        "another-scope": {
+            "deeper": {
+                "deeper-still": {
+                    "any-depth": "is supported"
+                }
+            }
         }
+        "arrays": [
+            "are",
+            "also",
+            "supported",
+        ]
     }
 ```
 
@@ -59,6 +71,19 @@ Then, to use a translation, import the t() function and uses it in your code:
 
 If the english nls translation file does not exist loadTranslations() will throw an error - it is the minimum required translation file in order to use this package.
 
+### Arrays
+
+Import the ta() function and uses it in your code:
+
+```
+    import { ta } from 'vscode-ext-localisation';
+
+    const anExampleFunction = (): string[] => {
+        // Do stuff...
+        return ta('get.my.array');
+    }
+```
+
 ## Placeholders
 
 You can use placeholders, first define a placeholder in a translation by surrounding it with double curly brackets:
@@ -74,6 +99,8 @@ Then pass in an object with the placeholders and their values:
 ```
     t('currentCount', { count: 10 })
 ```
+
+Placeholders can be strings or numbers.
 
 ## NLS Files
 

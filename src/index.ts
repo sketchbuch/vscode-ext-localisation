@@ -1,15 +1,24 @@
 export * from './localisation.interface';
 export * from './utils/getVscodeLang';
 export * from './utils/loadTranslations';
-import { DeepTranslations, Placeholders, Translations } from './localisation.interface';
+import {
+  Placeholders,
+  TranslationCache,
+  TranslationType,
+  Translations,
+} from './localisation.interface';
+import { isTranslationType } from './utils/isTranslationType';
 import { translations } from './utils/loadTranslations';
+import { replacePlacholders } from './utils/replacePlacholders';
 
-export const DEFAULT_LANG = 'en';
+const deepCache: TranslationCache = {};
 
-const deepCache: Translations = {};
+const getTranslation = <ReturnType>(key: string, placeholders: Placeholders | null): ReturnType => {
+  let translation: TranslationType = key;
 
-export const t = (key: string, placeholders: Placeholders | null = null): string => {
-  let translation = translations[key] || key;
+  if (translations[key] && isTranslationType(translations[key])) {
+    translation = translations[key] as TranslationType;
+  }
 
   // Deep check if no flat translation exists...
   if (key.includes('.') && !translations[key]) {
@@ -21,29 +30,37 @@ export const t = (key: string, placeholders: Placeholders | null = null): string
       const paths = key.split('.');
       const finalPath = paths.pop();
 
-      let translationPath: DeepTranslations | string = translations;
+      let translationPath = translations;
       let path: string | undefined;
 
       while ((path = paths.shift())) {
-        if (typeof translationPath !== 'string' && translationPath[path]) {
-          translationPath = translationPath[path];
+        if (!isTranslationType(translationPath) && translationPath[path]) {
+          translationPath = translationPath[path] as Translations;
         }
       }
 
       if (finalPath && typeof translationPath !== 'string') {
-        if (translationPath[finalPath] && typeof translationPath[finalPath] === 'string') {
-          translation = translationPath[finalPath] as string;
+        if (translationPath[finalPath] && isTranslationType(translationPath[finalPath])) {
+          translation = translationPath[finalPath] as TranslationType;
           deepCache[key] = translation;
         }
       }
     }
   }
 
-  if (translation !== key && placeholders !== null) {
-    for (const [k, v] of Object.entries(placeholders)) {
-      translation = translation.replace(`{{${k}}}`, v);
-    }
+  if (translation !== key) {
+    translation = replacePlacholders(translation, placeholders);
   }
 
-  return translation;
+  return translation as unknown as ReturnType;
+};
+
+export const t = (key: string, placeholders: Placeholders | null = null): string => {
+  return getTranslation<string>(key, placeholders);
+};
+
+export const ta = (key: string, placeholders: Placeholders | null = null): string[] => {
+  const trans = getTranslation<string[]>(key, placeholders);
+
+  return trans.toString() === key ? [] : trans;
 };

@@ -1,4 +1,4 @@
-import { DEFAULT_LANG } from '..';
+import { DEFAULT_LANG } from '../constants';
 
 export const getLangFileName = (lang: string): string => {
   if (lang === DEFAULT_LANG) {

@@ -1,4 +1,4 @@
-import { DEFAULT_LANG } from '../..';
+import { DEFAULT_LANG } from '../../constants';
 import { loadTranslations, translations } from '../loadTranslations';
 
 describe('loadTranslations()', () => {
@@ -6,18 +6,41 @@ describe('loadTranslations()', () => {
   const MOCK_EXT_PATH2 = `${MOCK_EXT_PATH}2`;
   const MOCK_EXT_PATH3 = `${MOCK_EXT_PATH}3`;
   const MOCK_EXT_PATH4 = `${MOCK_EXT_PATH}4`;
+
   const expectedTranslations = {
+    arrayTest: ['Star', 'Trek'],
+    arrayDeepTest: {
+      blue: {
+        midget: ['Red', 'Dwarf'],
+      },
+    },
+    placeholders: {
+      number: "A placeholder: '{{number}}'",
+      string: "A placeholder: '{{string}}'",
+    },
     test1: 'More text',
     test2: {
       test3: 'Some text',
     },
   };
+
   const expectedTranslationsDe = {
+    arrayTest: ['DE - Star', 'DE - Trek'],
+    arrayDeepTest: {
+      blue: {
+        midget: ['DE - Red', 'DE - Dwarf'],
+      },
+    },
+    placeholders: {
+      number: "DE - A placeholder: '{{number}}'",
+      string: "DE - A placeholder: '{{string}}'",
+    },
     test1: 'DE - More text',
     test2: {
       test3: 'DE - Some text',
     },
   };
+
   const errors = {
     default: 'Default translations could not be read',
     defaultNotFile: 'Unable to read translation file',

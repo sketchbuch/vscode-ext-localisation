@@ -1,4 +1,14 @@
 {
+  "arrayTest": ["DE - Star", "DE - Trek"],
+  "arrayDeepTest": {
+    "blue": {
+      "midget": ["DE - Red", "DE - Dwarf"]
+    }
+  },
+  "placeholders": {
+    "number": "DE - A placeholder: '{{number}}'",
+    "string": "DE - A placeholder: '{{string}}'"
+  },
   "test1": "DE - More text",
   "test2": {
     "test3": "DE - Some text"
