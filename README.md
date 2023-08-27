@@ -56,7 +56,7 @@ In your extension's activate() function, call loadTranslations() with the curren
     };
 ```
 
-This will load the translations for the active language. If the vscode langauge ever changes, vscode will restart and call the activate() function again, loading the correct language. If the language has no translation the default english translation will be used instead.
+This will load the translations for the active language. If the vscode language ever changes, vscode will restart and call the activate() function again, loading the correct language. If the language has no translation the default english translation will be used instead.
 
 Then, to use a translation, import the t() function and uses it in your code:
 
