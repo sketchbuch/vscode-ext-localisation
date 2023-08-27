@@ -1,6 +1,6 @@
 {
   "name": "vscode-ext-localisation",
-  "version": "1.1",
+  "version": "1.1.0",
   "description": "Localisation for VSCode Extensions using package.nls.json files",
   "author": "Sketchbuch",
   "bugs": {
