@@ -116,6 +116,4 @@ A list of supported language codes can be found here: https://code.visualstudio.
 
 ## Examples Usage
 
-See any of my VSCode extensions: https://github.com/sketchbuch?tab=repositories&q=vsc&type=&language
-
-**vsc-packages** has the most comprehensive usage of this package.
+See: **[VSC Workspace Sidebar](https://github.com/sketchbuch/vsc-workspace-sidebar)** as an example.
