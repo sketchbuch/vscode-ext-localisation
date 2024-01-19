@@ -33,8 +33,8 @@
     "lint:js": "eslint --config ./.eslintrc.js --fix --max-warnings=0 './src/**/*.ts'",
     "lint:prettier": "prettier --write --config ./.prettierrc.json './src/**/*.ts'",
     "lint:ts": "tsc --noEmit --p ./",
-    "lint": "yarn lint:ts && yarn lint:js && yarn lint:prettier",
-    "prepublishOnly": "yarn clean && yarn compile",
+    "lint": "pnpm lint:ts && pnpm lint:js && pnpm lint:prettier",
+    "prepublishOnly": "pnpm clean && pnpm compile",
     "test": "jest --config=./config/jest/jest.js"
   },
   "devDependencies": {
